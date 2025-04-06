@@ -300,40 +300,24 @@ function loadDataset() {
     }
 
     if (datasetName === "outliers") {
-        data = generateDataset(-2, 2, 20, (x) => 2 * x + (Math.random() > 0.9 ? Math.random() * 5 : 0));
+        data = [
+            [-1.5, -2], [-1, -1.5], [-0.5, -1], [0, -0.5],
+            [0.5, 0], [1, 0.5], [1.5, 1], [2, 1.5], [-1, 1.5], [1.5, -1]
+        ];
     } else if (datasetName === "nonlinear") {
-        data = generateDataset(-2, 2, 20, (x) => x * x);
+        data = [
+            [1.5, 1.5], [1.2, 1.2], [0.9, 0.7], [0.5, 0.2], [0, 0],
+            [-0.5, 0.2], [-0.9, 0.7], [-1.2, 1.2], [-1.5, 1.5]
+        ];
     } else {
-        data = generateDataset(-2, 2, 20, (x) => 2 * x);
+        data = [
+            [-1.5, -2], [-1, -1.5], [-0.5, -1], [0, -0.5],
+            [0.5, 0], [1, 0.5], [1.5, 1], [2, 1.5]
+        ];
     }
 
     addPoints();
     showDatasetTip();
-}
-
-function generateDataset(minX, maxX, numPoints, func, options = {}) {
-    const points = [];
-    const maxAttempts = 100;
-    const bound = 2.5;
-
-    for (let i = 0; i < numPoints; i++) {
-        let x, y, attempts = 0;
-        do {
-            x = minX + Math.random() * (maxX - minX);
-            y = func(x);
-
-            if (options.addNoise) y += (Math.random() * 2 - 1) * options.noiseLevel;
-            if (options.outlier && Math.random() < options.outlierChance)
-                y += (Math.random() * 2 - 1) * options.outlierMagnitude;
-
-            attempts++;
-            if (attempts > maxAttempts) break;
-        } while (x < -bound || x > bound || y < -bound || y > bound);
-
-        points.push([x, y]);
-    }
-
-    return points;
 }
 
 function onMouseMove(event) {
