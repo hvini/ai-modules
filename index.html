@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Modules</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .module-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .module-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .module-card h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .module-card p {
+            color: #666;
+            font-size: 0.9em;
+            flex-grow: 1;
+        }
+
+        .module-card a {
+            display: block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .module-card a:hover {
+            background-color: #0056b3;
+        }
+
+        .module-card a.disabled {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+        }
+
+        .module-card a.disabled:hover {
+            background-color: #cccccc;
+        }
+
+        @media (max-width: 600px) {
+            .module-card {
+                width: 90%;
+            }
+
+            .module-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Interactive Learning Modules</h1>
+
+    <div class="module-container">
+        <div class="module-card">
+            <h2>Linear Regression</h2>
+            <p>Explore and understand linear regression through interactive visualizations and guided exercises.</p>
+            <a href="modules/linear-regression/list.html">Start Learning</a>
+        </div>
+
+        <div class="module-card">
+            <h2>Logistic Regression</h2>
+            <p>Learn how logistic regression is used for classification tasks through intuitive examples and
+                interactions.</p>
+            <a href="#" class="disabled">Coming Soon</a>
+        </div>
+
+        <div class="module-card">
+            <h2>K-Nearest Neighbors</h2>
+            <p>Understand how the KNN algorithm works by experimenting with distance-based classification.</p>
+            <a href="#" class="disabled">Coming Soon</a>
+        </div>
+
+        <div class="module-card">
+            <h2>K-Means Clustering</h2>
+            <p>Discover how unsupervised learning groups data using K-Means with hands-on clustering exercises.</p>
+            <a href="#" class="disabled">Coming Soon</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
